@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "newlibrary"
+version = "0.1.0"
+description = "An experiment"
+authors= ["Geir Arne Hjelle <geirarne@realpython.com>"]
+maintainers = ["Robert Portelli <github@robertportelli.com>"]
+readme = "README.md"
+packages = [{include = "newlibrary", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "1.25.2"
+pre-commit = "^3.5.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.3"
+pytest = "^7.4.3"
+
+[tool.docformatter]
+# Maximum line length for docstrings
+wrap-length = 79
+
+# Sections of a module where docstrings should be ignored
+# (e.g., 'test', 'private')
+sections = ["test"]
+
+# Multiline docstring style (choose one: single, double, or numpy)
+style = "numpy"
+
+# List of words to ignore when wrapping lines
+ignore = ["example", "ignore", "longword"]
+
+# List of sections where no blank lines should be inserted (e.g., "module", "class", "function")
+no-blank = ["class"]
+
+# Allow wrapping to start on the first line (default is false)
+pre-summary-newline = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
